@@ -4,3 +4,6 @@ config-version: 2
 profile: 'nyc_taxi'
 
 model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
