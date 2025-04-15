@@ -1,4 +1,4 @@
 variable "project_id" {
-  description = "Your GCP Project ID"
+  description = "nyc-taxi-analytics-414819"
   type        = string
 }
