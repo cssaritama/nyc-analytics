@@ -4,6 +4,9 @@ config-version: 2
 profile: 'nyc_taxi'
 
 model-paths: ["models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
 seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+vars:
+  partition_by: "DATE(tpep_pickup_datetime)"
+  cluster_by: "PULocationID"
