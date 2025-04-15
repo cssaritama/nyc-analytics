@@ -9,20 +9,19 @@ default_args = {
 }
 
 with DAG(
-    'nyc_taxi_analytics',
+    'nyc_taxi_prod',
     default_args=default_args,
-    schedule_interval='0 3 * * *',  # Runs daily at 3 AM
-    max_active_runs=1
+    schedule_interval='@daily',
+    tags=['production']
 ) as dag:
 
-    ingest_to_bq = GCSToBigQueryOperator(
-        task_id='load_daily_trips',
-        bucket='nyc-taxi-data-lake-2025-cssaritama',
+    load_to_bq = GCSToBigQueryOperator(
+        task_id='load_daily_data',
+        bucket='nyc-taxi-prod-cssaritama', 
         source_objects=['raw/yellow_tripdata_2023-*.parquet'],
         destination_project_dataset_table='nyc_taxi_prod.raw_trips',
         source_format='PARQUET',
         write_disposition='WRITE_TRUNCATE',
         time_partitioning={'type': 'DAY'},
-        cluster_fields=['PULocationID'],
-        dag=dag
+        cluster_fields=['PULocationID']
     )
