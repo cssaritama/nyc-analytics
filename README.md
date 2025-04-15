@@ -1,15 +1,13 @@
-# nyc-analytics
+# NYC Taxi Analytics Dashboard
+End-to-end data pipeline for analyzing NYC taxi trips.
 
-# NYC Taxi Analytics Pipeline
-End-to-end data pipeline for analyzing NYC Green Taxi trips (Jan 2023).
+## Pipeline Architecture
+1. **Data Lake**: GCS (raw Parquet files).
+2. **Data Warehouse**: BigQuery (partitioned by date).
+3. **Transformations**: dbt.
+4. **Dashboard**: Looker Studio.
 
-## 🚀 Technologies Used
-- **Cloud**: Google Cloud Platform (GCP)
-- **Infrastructure**: Terraform
-- **Orchestration**: Airflow (Composer)
-- **Data Lake**: Google Cloud Storage (GCS)
-- **Data Warehouse**: BigQuery
-- **Transformation**: dbt
-- **Dashboard**: Google Data Studio
-
-## 📂 Project Structure
+## How to Run
+1. **Infra**: `cd terraform && terraform apply`.
+2. **Airflow**: Upload `dags/nyc_taxi_pipeline.py` to Composer.
+3. **dbt**: Run `dbt run` inside `dbt/` folder.
