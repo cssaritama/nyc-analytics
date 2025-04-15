@@ -1,8 +1,13 @@
 version: 2
 
 models:
-  - name: stg_yellow_trips
-    description: "Cleaned raw trip data"
+  - name: stg_trips
+    description: "Datos limpios de viajes"
+    config:
+      materialized: table
+      partition_by: "DATE(tpep_pickup_datetime)"
+      cluster_by: "PULocationID"
+    
     columns:
       - name: tpep_pickup_datetime
         tests:
