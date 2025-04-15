@@ -1,0 +1,15 @@
+version: 2
+
+seeds:
+  - name: taxi_zones
+    description: "Taxis mapping of NYC"
+    config:
+      materialized: table
+    columns:
+      - name: LocationID
+        tests:
+          - not_null
+          - unique
+      - name: Borough
+        tests:
+          - not_null
