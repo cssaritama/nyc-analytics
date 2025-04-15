@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "data_lake" {
-  name          = "${var.project_id}-data-lake"
+  name          = "nyc-taxi-data-lake-2025"
   location      = "US"
   force_destroy = true
 }
