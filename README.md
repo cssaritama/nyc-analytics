@@ -1,13 +1,12 @@
-# NYC Taxi Analytics Dashboard
-End-to-end data pipeline for analyzing NYC taxi trips.
+# NYC Taxi Analytics (2023)
+Pipeline to analyze NYC taxi trips using real 2023 data.
 
-## Pipeline Architecture
-1. **Data Lake**: GCS (raw Parquet files).
-2. **Data Warehouse**: BigQuery (partitioned by date).
-3. **Transformations**: dbt.
-4. **Dashboard**: Looker Studio.
+## Architecture
+- **Data Lake**: GCS (`nyc-taxi-data-lake-2025-cssaritama`)
+- **Data Warehouse**: BigQuery (`nyc_taxi_analytics.raw_rides`)
+
 
 ## How to Run
-1. **Infra**: `cd terraform && terraform apply`.
-2. **Airflow**: Upload `dags/nyc_taxi_pipeline.py` to Composer.
-3. **dbt**: Run `dbt run` inside `dbt/` folder.
+1. **Infrastructure**:
+   ```bash
+   cd terraform && terraform apply -var="project_id=nyc-taxi-123456"  
