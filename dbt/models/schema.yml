@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_yellow_trips
+    description: "Cleaned raw trip data"
+    columns:
+      - name: tpep_pickup_datetime
+        tests:
+          - not_null
+      - name: PULocationID
+        tests:
+          - not_null
+          - relationships:
+              to: ref('taxi_zones')
+              field: LocationID
