@@ -23,7 +23,7 @@ Build a **data pipeline** that:
 
 ## 🛠️ Technical Solution  
 ### Architecture  
-![nyc-taxi-architecture drawio](https://github.com/user-attachments/assets/1da26e07-c732-4f55-a2bd-cd74ac1627cf)
+![nyc-taxi-architecture drawio](https://github.com/user-attachments/assets/4d9b72ba-3035-4955-a7ea-0bc6f8fccc07)
 
 - **Data Lake**: GCS (`nyc-taxi-data-lake-2025-cssaritama`)
 - **Data Warehouse**: BigQuery (`nyc_taxi_prod`)
